@@ -25,19 +25,25 @@ database = "Mininet_DB"
 connection = create_db_connection(host, user, password, database)
 
 def fetch_results(connection, query, params=None):
-    """Fetch and print results for a given query."""
-    cursor = connection.cursor(dictionary=True)
-    
-    if params:
-        cursor.execute(query, params)
-    else:
-        cursor.execute(query)
-    
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
-    
-    cursor.close()
+    """Fetches results and prints them in a basic format."""
+    cursor = connection.cursor(dictionary=True)  # Fetch results as dictionaries
+
+    try:
+        # Use params only if provided
+        if params is not None:
+            cursor.execute(query, params)
+        else:
+            cursor.execute(query) 
+
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
+
+    except Error as err:
+        print(f"Error executing query: '{err}'")
+
+    finally:
+        cursor.close()
 
 # Functions
 def query_hd_subscriptions():
