@@ -28,7 +28,6 @@ connection = create_db_connection(host, user, password, database)
 def fetch_results(connection, query, params=None):
     """Fetches results and prints them in a basic format."""
     cursor = connection.cursor(dictionary=True) 
-
     try:
         if params is not None:
             cursor.execute(query, params)
@@ -45,7 +44,6 @@ def fetch_results(connection, query, params=None):
     finally:
         cursor.close()
 
-# Functions
 def query_hd_subscriptions():
     fetch_results(connection, hd_subscriptions)
 
@@ -61,14 +59,14 @@ def query_fav_comedy_movie(username):
 def query_sub_by_country():
     fetch_results(connection, sub_byCountry)
 
-if __name__ == "__main__":
+if __name__=="__main__":
     while True:
-        print("\nSelect a query to run:")
-        print("1. Export all data about users in the HD subscriptions. ")
-        print("2. Export all data about actors and their associated movies.")
-        print("3. Export all data to group actors from a specific city, showing also the average age /per city) .")
+        print("\n  Select a query to run:")
+        print("1. Export all data about users in the HD subscription ")
+        print("2. Export all data about actors and their part movies.")
+        print("3. Export all data to group actors from a particular city, average age per/city) .")
         print("4. Export all data to show the favourite comedy movies for a specific user. ")
-        print("5. Export all data to count how many subscriptions are in the database per country. ")
+        print("5. Export all data to count how many subscriptions are in the database per country . ")
         print("6. Exit")
 
         choice = input("Enter your choice (1-6): ")
@@ -88,4 +86,4 @@ if __name__ == "__main__":
             connection.close()
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 6.")
+            print("Invalid choice. Please enter  number between 1 and 6.")
