@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 from select_queries import *
 
+
 def create_db_connection(host_name, user_name, user_password, db_name):
     connection = None
     try:
@@ -26,10 +27,9 @@ connection = create_db_connection(host, user, password, database)
 
 def fetch_results(connection, query, params=None):
     """Fetches results and prints them in a basic format."""
-    cursor = connection.cursor(dictionary=True)  # Fetch results as dictionaries
+    cursor = connection.cursor(dictionary=True) 
 
     try:
-        # Use params only if provided
         if params is not None:
             cursor.execute(query, params)
         else:
