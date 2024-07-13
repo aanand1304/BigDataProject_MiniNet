@@ -67,3 +67,27 @@ ORDER BY Age ASC
 LIMIT 1;
 
 '''
+
+#4.9 Export data to find users between 22 - 30 years old (including 22 and 30 ).
+user_22_30='''
+SELECT Username, Email, City, Country, Age, SubscriptionType
+FROM Users
+WHERE Age BETWEEN 22 AND 30;
+'''
+
+
+#4.10 Export data to find the average age of users with low score reviews (less than 3). Group your data for users under 20, 21-40, and 41 and over.
+
+averageAge_lowreview='''
+SELECT 
+    CASE
+        WHEN Age < 20 THEN 'Under 20'
+        WHEN Age BETWEEN 21 AND 40 THEN '21-40'
+        ELSE '41 and over'
+    END as AgeGroup,
+    AVG(Age) as AverageAge
+FROM  Users u
+JOIN Reviews r ON u.Username = r.Username
+WHERE r.Score < 3
+GROUP BY AgeGroup;
+'''

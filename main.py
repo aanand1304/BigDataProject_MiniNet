@@ -3,6 +3,8 @@ from mysql.connector import Error
 from create_queries import *
 from insert_queries import *
 from select_queries import *
+
+
 """ ****************************************Database Connection **********************************************"""
 def create_server_connection(host_name, user_name, user_password):
     connection = None
@@ -215,3 +217,24 @@ for result in results:
   print(result)
 
 print()
+
+#4.9 Export data to find users between 22 - 30 years old (including 22 and 30 ).
+cursor.execute(user_22_30)
+results = cursor.fetchall()
+
+print("Users between 22 - 30 years old (including 22 and 30 ):")
+for result in results:
+  print(result)
+
+print()
+
+#4.10 Export data to find the average age of users with low score reviews (less than 3). Group your data for users under 20, 21-40, and 41 and over.
+cursor.execute(averageAge_lowreview)
+results = cursor.fetchall()
+
+print("Average age of users with low score reviews (less than 3) :")
+for result in results:
+  print(result)
+
+print()
+

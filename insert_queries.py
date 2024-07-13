@@ -5,7 +5,7 @@ INSERT INTO Subscription (PlanName, Price, Duration) VALUES
 '''
 
 
-insert_users = '''
+insert_userss = '''
 INSERT INTO Users (Username, Email, Password, City, Country, Age, SubscriptionType) VALUES
 ('john_doe', 'john@example.com', 'password1', 'New York', 'USA', 28, 'HD'),
 ('Ashit Anand', 'ashit@example.com', 'password5123', 'Patna', 'India', 28, 'HD'),
@@ -13,7 +13,9 @@ INSERT INTO Users (Username, Email, Password, City, Country, Age, SubscriptionTy
 ('alice_smith', 'alice@example.com', 'password2', 'Los Angeles', 'USA', 34, 'HD'),
 ('jane_doe', 'jane@example.com', 'password3', 'Chicago', 'USA', 21, 'UHD'),
 ('bob_jones', 'bob@example.com', 'password4', 'Boston', 'USA', 30, 'UHD'),
-('emma_johnson', 'emma@example.com', 'password5', 'San Francisco', 'USA', 25, 'HD');
+('emma_johnson', 'emma@example.com', 'password5', 'San Francisco', 'USA', 25, 'HD'),
+('mike_tyson', 'mike@example.com', 'password111', 'Sydney', 'Australia', 19, 'UHD'),
+('emma_watson', 'emmaw@example.com', 'password51', 'San Francisco', 'USA', 50, 'HD');
 '''
 insert_movies = '''
 INSERT INTO Movies (Title, Genre, ReleaseDate) VALUES
@@ -40,7 +42,11 @@ INSERT INTO Reviews (Username, MovieTitle, Score, Comment) VALUES
 ('alice_smith', 'Breaking Bad', 3, 'Good show'),
 ('jane_doe', 'The Office', 4, 'Funny and smart'),
 ('bob_jones', 'Parks and Recreation', 2, 'Not my taste'),
-('emma_johnson', 'The Godfather', 5, 'A classic!');
+('emma_johnson', 'The Godfather', 5, 'A classic!'),
+('emma_watson', "The Office", 2, "sfbjshfak type"),
+('emma_watson', "The Office", 2, "sfbjshfak type"),  
+('Ashit Anand', "The Godfather", 2, "Too old-fashioned"),  
+('emma_johnson', "Breaking Bad", 1, "Too intense for me");
 '''
 
 insert_favoriteMovies = '''
