@@ -194,5 +194,24 @@ for result in results:
   print(result)
 
 print()
+
 #4.7 Export data to find the number of subscriptions per movie category.
 
+cursor.execute(subs_movieCat)
+results = cursor.fetchall()
+
+print("Number of subscriptions per movie category: ")
+for result in results:
+  print(result)
+
+print()
+
+#4.8 Export data to find the username and the city of the youngest customer in the UHD subscription  category.
+cursor.execute(young_User)
+results = cursor.fetchall()
+
+print("Youngest customer in the UHD subscription  category: ")
+for result in results:
+  print(result)
+
+print()

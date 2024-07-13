@@ -50,3 +50,20 @@ WHERE Title LIKE 'The%';
 '''
 
 #4.7 Export data to find the number of subscriptions per movie category.
+subs_movieCat='''
+SELECT m.Genre as Category, COUNT(u.Username) as SubscriptionCount
+FROM Movies m
+JOIN Reviews r ON m.Title = r.MovieTitle
+JOIN Users u ON r.Username = u.Username
+GROUP BY m.Genre;
+'''
+
+#4.8 Export data to find the username and the city of the youngest customer in the UHD subscription  category.
+young_User='''
+SELECT Username, Email, Password, SubscriptionType, City, Country, Age
+FROM Users
+WHERE SubscriptionType = 'UHD'
+ORDER BY Age ASC
+LIMIT 1;
+
+'''
