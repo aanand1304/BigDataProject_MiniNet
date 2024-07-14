@@ -32,7 +32,7 @@ def fetch_and_print_results(query, params=None):
 print("Export all users:")
 fetch_and_print_results(export_all_users)
 
-# Export all users from a specific country (example: 'USA')
+# Export all users from a specific country 
 country = input("\nEnter the country to export users from: ")
 print(f"\nExport users from {country}:")
 fetch_and_print_results(export_users_by_country, (country,))
