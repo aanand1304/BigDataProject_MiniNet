@@ -82,12 +82,4 @@ CREATE TABLE WatchHistory (
     FOREIGN KEY (MovieTitle) REFERENCES Movies(Title) ON DELETE CASCADE
 );
 '''
-delete_table = '''
-DROP TABLE IF EXISTS Reviews;
-DROP TABLE IF EXISTS FavoriteMovies;
-DROP TABLE IF EXISTS MovieActors;
-DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Movies;
-DROP TABLE IF EXISTS Actors;
-DROP TABLE IF EXISTS Subscription;
-'''
+
