@@ -3,7 +3,7 @@ from cassandra.cluster import Cluster
 #Connect to  Cassandra cluster
 cluster=Cluster(['172.17.0.2', '172.17.0.3', '172.17.0.4'],port=9042)
 
-# Connect to MiniNet keyspace
+## Connect to MiniNet keyspace
 session=cluster.connect('mininet')
 
 # 6.2 Export all users
@@ -46,6 +46,5 @@ fetch_and_print_results(export_users_by_age_range, (22, 30))
 print()
 print("Count users per city:")
 fetch_and_print_results(count_users_per_city)
-
 
 session.shutdown()
