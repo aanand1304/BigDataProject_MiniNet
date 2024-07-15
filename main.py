@@ -4,8 +4,7 @@ from create_queries import *
 from insert_queries import *
 from select_queries import *
 
-
-""" ****************************************Database Connection **********************************************"""
+""" ****************************************Server Connection **********************************************"""
 def create_server_connection(host_name, user_name, user_password):
     connection = None
     try:
@@ -19,7 +18,7 @@ def create_server_connection(host_name, user_name, user_password):
         print(f"Error: '{err}'")
 
     return connection
-
+""" ****************************************Database Connection **********************************************"""
 def create_db_connection(host_name, user_name, user_password, db_name):
     connection = None
     try:
@@ -48,7 +47,7 @@ cursor = connection.cursor()
 
 
 
-"""************************************************Table Create queries work***************************************************"""
+"""************************************************Table Create  work***************************************************"""
 
 #create sub table 
 #cursor.execute(create_sub_table)
@@ -79,7 +78,7 @@ cursor = connection.cursor()
 
 
 
-"""****************************************Insert querie work********************************************"""
+"""****************************************Insert  work********************************************"""
 
 
 def execute_query(connection, query):
@@ -134,21 +133,21 @@ for (databases) in cursor:
 """**********************************Export Work(Select)**************************************"""
 
 #4.1 Export all data about users in the HD subscriptions.
-cursor.execute(hd_subscriptions)
+cursor.execute(hd_subscriptions )
 
 results = cursor.fetchall()
-print("Users in the HD subscriptions: ")
-'''
+print(" Users in the HD subscriptions: ")
+
 for result in results:
   print(result)
-'''
+
 print()
 
 #4.2 Export all data about actors and their associated movies."""
 cursor.execute(actor_movies)
 
 results = cursor.fetchall()
-print("Actors and their associated movies: ")
+print(" Actors and their associated movies: ")
 for result in results:
   print(result)
 print()
@@ -156,7 +155,7 @@ print()
 cursor.execute(actors_city)
 results = cursor.fetchall()
 
-print("Actors from a specific city & the average age /per city: ")
+print(" Actors from a specific city & the average age /per city: ")
 for result in results:
   print(result)
 
@@ -165,13 +164,13 @@ print()
 
 #4.4 Export all data to show the favourite comedy movies for a specific user.
 
-specific_user = input("Enter the username to fetch favorite comedy movie: ")
+specific_user = input(" Enter the username to fetch favorite comedy movie : ")
 
 cursor.execute(fav_comedy_movie, (specific_user,))
 
 results = cursor.fetchall()
 
-print("Favourite comedy movies for ",specific_user)
+print(" Favourite comedy movies for",specific_user)
 for result in results:
   print(result)
 print()
@@ -191,7 +190,7 @@ print()
 cursor.execute(movie_nameThe)
 results = cursor.fetchall()
 
-print("Movies that start with the keyword 'The': ")
+print("Movies that start with the keyword 'The' : ")
 for result in results:
   print(result)
 
@@ -202,7 +201,7 @@ print()
 cursor.execute(subs_movieCat)
 results = cursor.fetchall()
 
-print("Number of subscriptions per movie category: ")
+print("Number of subscriptions per movie category : ")
 for result in results:
   print(result)
 
@@ -212,7 +211,7 @@ print()
 cursor.execute(young_User)
 results = cursor.fetchall()
 
-print("Youngest customer in the UHD subscription  category: ")
+print("Youngest customer in the UHD subscription  category : ")
 for result in results:
   print(result)
 
@@ -230,6 +229,7 @@ print()
 
 #4.10 Export data to find the average age of users with low score reviews (less than 3). Group your data for users under 20, 21-40, and 41 and over.
 cursor.execute(averageAge_lowreview)
+
 results = cursor.fetchall()
 
 print("Average age of users with low score reviews (less than 3) :")
